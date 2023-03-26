@@ -22,10 +22,10 @@ except:
 for i in range(page):
     driver.get('https://www.pagalworld.tv/top-songs.html?page={}'.format(i+1))
     for i in range(25):
-        listt = driver.find_elements_by_xpath("//div[@class='cat-list']")
+        listt = driver.find_elements(By.XPATH,"//div[@class='cat-list']")
         io = listt[i]
         io.click()
-        music = driver.find_element_by_class_name('dbutton')
+        music = driver.find_element(By.CLASS_NAME,'dbutton')
         music.click()
         sleep(1)
         driver.back()
